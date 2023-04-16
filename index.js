@@ -6,11 +6,22 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 
-mongoose.connect("mongodb://127.0.0.1:27017",{
+mongoose.connect("mongodb+srv://Shubhamy:21jumlcpBeAHUxbx@cluster0.ywnqbfq.mongodb.net/ecommerce",{
     dbName : "backend",
 }).then(() => console.log("mongodb connected"))
 .catch((err) => console.log(err));
 
+
+
+// const connectDB=async()=>{
+//     try {
+//      const conn=await mongoose.connect(process.env.MONGO_URL);
+//      console.log(`connected to mongoDB database ${conn.connection.host}`.bgMagenta.white )
+//     } catch (error) {
+//      console.log(`error in mongoDb ${error}`.bgRed.white);
+//     }
+//  }
+ 
 const userSchema = new mongoose.Schema({
     name : String,
     email : String,
